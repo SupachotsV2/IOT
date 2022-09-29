@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title></title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <body>
+    <button type="btn" onclick="changeStatusValve(1)">Valve1</button>
+    <span>Status : </span><span id="v1"></span><br><br>
+    <button type="btn" onclick="changeStatusValve(2)">Valve2</button>
+    <span>Status : </span><span id="v2"></span><br><br>
+    <button type="btn" onclick="changeStatusValve(3)">Valve3</button>
+    <span>Status : </span><span id="v3"></span><br><br>
+    <button type="btn" onclick="changeStatusValve(4)">Valve4</button>
+    <span>Status : </span><span id="v4"></span><br><br>
+    <span>PumpStatus : </span><span id="p1"></span><br><br>
+  </body>
+  <script src ="{{ url_for('static', path='/app.js')}}"></script>
+  <script>
+  getStatusValve()
+  // getStatusPump()
+  
+  </script>
+</html>
