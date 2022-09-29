@@ -18,7 +18,7 @@ function getStatusValve(){
                 getStatusPump();
               }
             }else{
-//               getStatusPump(); // endless loop
+              getStatusPump(); // endless loop
               // lastgetinfovalveandpump();
               // document.getElementById("p1").innerHTML = document.getElementById("p1").innerText
             }
