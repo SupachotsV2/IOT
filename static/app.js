@@ -1,5 +1,5 @@
 function getStatusValve(){
-    let url = "https://smartpumptest.herokuapp.com/StatusInfo/";
+    let url = " https://smartpumptest.herokuapp.com/StatusInfo/";
         fetch(url)
           .then((res) => res.json())
             .then(function(data){
@@ -11,10 +11,10 @@ function getStatusValve(){
               document.getElementById("v4").innerHTML= list[3]['status']
               if(list[0]['status'] == "Off" && list[1]['status'] == "Off" && list[2]['status'] == "Off" && list[3]['status'] == "Off"){
                 changeStatusPump(1,"Off")
-                document.getElementById("p1").innerHTML= list[0]['status']
+                document.getElementById("p1").innerHTML= "Off"
               }else{
                 changeStatusPump(1,"On")
-                document.getElementById("p1").innerHTML= list[0]['status']
+                document.getElementById("p1").innerHTML= "On"
               }
             }
 )};
@@ -40,7 +40,7 @@ const csrftoken = getCookie("csrftoken");
 
 function changeStatusValve(task){
     valve_id = task
-    let url = ` https://smartpumptest.herokuapp.com/${valve_id}/`;
+    let url = `https://smartpumptest.herokuapp.com/StatusInfo/${valve_id}/`;
     fetch(url)
       .then((res) => res.json())
         .then(function(data){
@@ -53,7 +53,7 @@ function changeStatusValve(task){
         else{
             status = "Off"
         }
-        let url = ` https://smartpumptest.herokuapp.com/StatusInfo/${valve_id}/`;
+        let url = `https://smartpumptest.herokuapp.com/StatusInfo/${valve_id}/`;
         fetch(url,{
         method:"PUT",
         headers:{
