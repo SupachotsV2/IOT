@@ -11,11 +11,12 @@ function getStatusValve(){
               document.getElementById("v4").innerHTML= list[3]['status']
               if(list[0]['status'] == "Off" && list[1]['status'] == "Off" && list[2]['status'] == "Off" && list[3]['status'] == "Off"){
                 changeStatusPump(1,"Off")
-                document.getElementById("p1").innerHTML= "Off"
+                document.getElementById("p1").innerHTML= list[0]['status']
               }else{
                 changeStatusPump(1,"On")
-                document.getElementById("p1").innerHTML= "On"
+                document.getElementById("p1").innerHTML= list[0]['status']
               }
+            }
 )};
 
 
