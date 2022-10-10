@@ -1,5 +1,5 @@
 function getStatusValve(){
-    let url = " https://smartpumptest.herokuapp.com/StatusInfo/";
+    let url = " http://127.0.0.1:8000/StatusInfo/";
         fetch(url)
           .then((res) => res.json())
             .then(function(data){
@@ -40,7 +40,7 @@ const csrftoken = getCookie("csrftoken");
 
 function changeStatusValve(task){
     valve_id = task
-    let url = `https://smartpumptest.herokuapp.com/StatusInfo/${valve_id}/`;
+    let url = `http://127.0.0.1:8000/StatusInfo/${valve_id}/`;
     fetch(url)
       .then((res) => res.json())
         .then(function(data){
@@ -53,7 +53,7 @@ function changeStatusValve(task){
         else{
             status = "Off"
         }
-        let url = `https://smartpumptest.herokuapp.com/StatusInfo/${valve_id}/`;
+        let url = `http://127.0.0.1:8000/StatusInfo/${valve_id}/`;
         fetch(url,{
         method:"PUT",
         headers:{
@@ -69,7 +69,7 @@ function changeStatusValve(task){
 
 function changeStatusPump(task,status){
     Pump_id = task
-    let url = `https://smartpumptest.herokuapp.com/WaterPump/${Pump_id}/`;
+    let url = `http://127.0.0.1:8000/WaterPump/${Pump_id}/`;
     fetch(url,{
     method:"PUT",
     headers:{
