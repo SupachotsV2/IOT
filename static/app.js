@@ -40,7 +40,7 @@ const csrftoken = getCookie("csrftoken");
 
 function changeStatusValve(task){
     valve_id = task
-    let url = `https://testiotv2.herokuapp.com/${valve_id}/`;
+    let url = `https://testiotv2.herokuapp.com/StatusInfo/${valve_id}/`;
     fetch(url)
       .then((res) => res.json())
         .then(function(data){
@@ -53,7 +53,7 @@ function changeStatusValve(task){
         else{
             status = "Off"
         }
-        let url = `https://testiotv2.herokuapp.com/${valve_id}/`;
+        let url = `https://testiotv2.herokuapp.com/StatusInfo/${valve_id}/`;
         fetch(url,{
         method:"PUT",
         headers:{
@@ -69,7 +69,7 @@ function changeStatusValve(task){
 
 function changeStatusPump(task,status){
     Pump_id = task
-    let url = `https://testiotv2.herokuapp.com/${Pump_id}/`;
+    let url = `https://testiotv2.herokuapp.com/WaterPump/${Pump_id}/`;
     fetch(url,{
     method:"PUT",
     headers:{
